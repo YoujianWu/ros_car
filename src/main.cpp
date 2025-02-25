@@ -16,27 +16,27 @@ void ros_car::updateMotion(const CarMotion& motion)
   }
   if (motion == CarMotion::FORWARD)
   {
-    cmd_vel_.linear.x = 1.0;
+    cmd_vel_.linear.x = 0.5;
     cmd_vel_.linear.y = 0.0;
     cmd_vel_.angular.z = 0.0;
   }
   if (motion == CarMotion::BACKWARD)
   {
-    cmd_vel_.linear.x = -1.0;
+    cmd_vel_.linear.x = -0.5;
     cmd_vel_.linear.y = 0.0;
     cmd_vel_.angular.z = 0.0;
   }
   if (motion == CarMotion::TURN_LEFT)
   {
-    cmd_vel_.linear.x = 1.0;
+    cmd_vel_.linear.x = 0.5;
     cmd_vel_.linear.y = 0.0;
-    cmd_vel_.angular.z = 1.0;
+    cmd_vel_.angular.z = 0.5;
   }
   if (motion == CarMotion::TURN_RIGHT)
   {
-    cmd_vel_.linear.x = 1.0;
+    cmd_vel_.linear.x = 0.5;
     cmd_vel_.linear.y = 0.0;
-    cmd_vel_.angular.z = -1.0;
+    cmd_vel_.angular.z = -0.5;
   }
 }
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
   cmd_pub_ = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
   CarMotion motion = CarMotion::STOP;
 
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(100);
   // loop to process callback and publish msgs.
   while (ros::ok())
   {
