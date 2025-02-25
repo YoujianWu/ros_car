@@ -4,3 +4,28 @@
 
 #pragma once
 
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
+#include <nav_msgs/Odometry.h>
+
+namespace ros_car
+{
+// state
+enum CarMotion
+{
+  STOP,
+  FORWARD,
+  BACKWARD,
+  TURN_LEFT,
+  TURN_RIGHT,
+};
+
+// variables
+ros::Publisher cmd_pub_;
+ros::Subscriber odom_sub_;
+geometry_msgs::Twist cmd_vel_;
+
+// functions
+void updateMotion(const CarMotion& motion);
+void odom_callback(const nav_msgs::Odometry::ConstPtr& msg);
+};  // namespace ros_car
