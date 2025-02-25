@@ -18,6 +18,8 @@ enum CarMotion
   BACKWARD,
   TURN_LEFT,
   TURN_RIGHT,
+  REVERSE_LEFT,
+  REVERSE_RIGHT,
 };
 
 // variables

@@ -38,11 +38,22 @@ void ros_car::updateMotion(const CarMotion& motion)
     cmd_vel_.linear.y = 0.0;
     cmd_vel_.angular.z = -0.5;
   }
+  if (motion == CarMotion::REVERSE_LEFT)
+  {
+    cmd_vel_.linear.x = -0.5;
+    cmd_vel_.linear.y = 0.0;
+    cmd_vel_.angular.z = -0.5;
+  }
+  if (motion == CarMotion::REVERSE_RIGHT)
+  {
+    cmd_vel_.linear.x = -0.5;
+    cmd_vel_.linear.y = 0.0;
+    cmd_vel_.angular.z = 0.5;
+  }
 }
 
 void ros_car::odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
 {
-  std::cout << msg->header.frame_id << std::endl;
 }
 
 int main(int argc, char **argv) {
