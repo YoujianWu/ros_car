@@ -8,6 +8,6 @@
 #include "car.h"
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "car");
-    return 0;
+  ros::init(argc, argv, "car");
+  return 0;
 }

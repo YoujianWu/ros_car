@@ -59,7 +59,7 @@ include_directories(
 
 ## Declare cpp executables
 FILE(GLOB ALL_SOURCES "src/*.cpp")
-add_executable(${PROJECT_NAME} ${ALL_SOURCES})
+add_executable(${PROJECT_NAME} src/main.cpp)
 
 ## Add dependencies to exported targets, like ROS msgs or srvs
 add_dependencies(${PROJECT_NAME}
