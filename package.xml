@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_car</name>
+  <version>1.0.54</version>
+  <description>A template for ROS packages.</description>
+  <maintainer email="youjianwu0828@gmail.com">Youjian Wu</maintainer>
+
+  <license>BSD</license>
+  <author email="youjianwu0828@gmail.com">Youjian Wu</author>
+
+  <!-- buildtool_depend: dependencies of the build process -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- depend: build, export, and execution dependency -->
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_geometry_msgs</depend>
+</package>
