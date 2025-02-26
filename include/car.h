@@ -17,12 +17,13 @@ enum CarMotion
   FORWARD,
   BACKWARD,
   TURN_LEFT,
-  TURN_RIGHT,
   REVERSE_LEFT,
+  TURN_RIGHT,
   REVERSE_RIGHT,
 };
 
 // variables
+ros::Time last_time_;
 ros::Publisher cmd_pub_;
 ros::Subscriber odom_sub_;
 geometry_msgs::Twist cmd_vel_;

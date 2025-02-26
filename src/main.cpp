@@ -84,6 +84,14 @@ int main(int argc, char **argv) {
   // loop to process callback and publish msgs.
   while (ros::ok())
   {
+    // change motion randomly
+    ros::Time current_time = ros::Time::now();
+    if ((current_time - last_time_).toSec() > 2)
+    {
+      motion = static_cast<CarMotion>((motion + 1) % 7);
+      last_time_ = current_time;
+    }
+    // update motion and publish cmd
     updateMotion(motion);
     cmd_pub_.publish(cmd_vel_);
     ros::spinOnce();
