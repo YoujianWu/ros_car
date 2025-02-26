@@ -54,6 +54,22 @@ void ros_car::updateMotion(const CarMotion& motion)
 
 void ros_car::odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
 {
+  double x = msg->pose.pose.position.x;
+  double y = msg->pose.pose.position.y;
+  double z = msg->pose.pose.position.z;
+
+  double qx = msg->pose.pose.orientation.x;
+  double qy = msg->pose.pose.orientation.y;
+  double qz = msg->pose.pose.orientation.z;
+  double qw = msg->pose.pose.orientation.w;
+
+  double Vx = msg->twist.twist.linear.x;
+  double Vy = msg->twist.twist.linear.y;
+  double Vz = msg->twist.twist.angular.z;
+
+  ROS_INFO("Velocity: Vx=%f, Vy=%f, Vz=%f", Vx, Vy, Vz);
+  ROS_INFO("Position: x=%f, y=%f, z=%f", x, y, z);
+  ROS_INFO("Orientation: qx=%f, qy=%f, qz=%f, qw=%f", qx, qy, qz, qw);
 }
 
 int main(int argc, char **argv) {
