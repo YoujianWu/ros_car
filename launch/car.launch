@@ -1,0 +1,3 @@
+<launch>
+    <node name="my_ros_car" pkg="ros_car" type="ros_car" respawn="false"/>
+</launch>
