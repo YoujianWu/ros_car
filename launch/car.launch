@@ -1,3 +1,7 @@
 <launch>
+    <!--open robot hardware-->
+    <include file="$(find turn_on_wheeltec_robot)/launch/turn_on_wheeltec_robot.launch" />
+
+    <!--load my node  -->
     <node name="my_ros_car" pkg="ros_car" type="ros_car" respawn="false"/>
 </launch>
